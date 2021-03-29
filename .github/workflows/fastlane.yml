@@ -32,8 +32,8 @@ jobs:
 
     - name: Sleep for 20 seconds
       Run: |
-	sleep 20
-            
+	sleep 2
+
     - name: Run tests 
       run: |
         bundle exec fastlane tests
