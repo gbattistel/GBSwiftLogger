@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B231339271E451D5AB056FE /* Pods_LoggerTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37816E4F82ABB378109FAF7 /* Pods_LoggerTestApp.framework */; };
+		A890148A3BBCAEF1E5846C9F /* Pods_GBSwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D89909B924405AEF88B819 /* Pods_GBSwiftLogger.framework */; };
+		B09DCD5AD177190E2FC021BB /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1415A6F73609EE554BDCC5BF /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework */; };
 		F7BD0D18261148E400F4D301 /* GBSwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BD0D0E261148E300F4D301 /* GBSwiftLogger.framework */; };
 		F7BD0D1D261148E400F4D301 /* GBSwiftLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0D1C261148E400F4D301 /* GBSwiftLoggerTests.swift */; };
 		F7BD0D1F261148E400F4D301 /* GBSwiftLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BD0D11261148E300F4D301 /* GBSwiftLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01D89909B924405AEF88B819 /* Pods_GBSwiftLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBSwiftLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1415A6F73609EE554BDCC5BF /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GBSwiftLogger_GBSwiftLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DB7A1C469BDF6835349672B /* Pods-LoggerTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoggerTestApp.debug.xcconfig"; path = "Target Support Files/Pods-LoggerTestApp/Pods-LoggerTestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5049964958D7EC0C44722467 /* Pods-GBSwiftLogger-GBSwiftLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBSwiftLogger-GBSwiftLoggerTests.release.xcconfig"; path = "Target Support Files/Pods-GBSwiftLogger-GBSwiftLoggerTests/Pods-GBSwiftLogger-GBSwiftLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
+		7FDE38B21BA8DEA17B7CDCB4 /* Pods-GBSwiftLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBSwiftLogger.debug.xcconfig"; path = "Target Support Files/Pods-GBSwiftLogger/Pods-GBSwiftLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		867D7415C80D134B42D1C317 /* Pods-LoggerTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoggerTestApp.release.xcconfig"; path = "Target Support Files/Pods-LoggerTestApp/Pods-LoggerTestApp.release.xcconfig"; sourceTree = "<group>"; };
+		A37816E4F82ABB378109FAF7 /* Pods_LoggerTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LoggerTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC31288792D39039DDC51FD6 /* Pods-GBSwiftLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBSwiftLogger.release.xcconfig"; path = "Target Support Files/Pods-GBSwiftLogger/Pods-GBSwiftLogger.release.xcconfig"; sourceTree = "<group>"; };
+		DC56876D5640F980181BD0FB /* Pods-GBSwiftLogger-GBSwiftLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GBSwiftLogger-GBSwiftLoggerTests.debug.xcconfig"; path = "Target Support Files/Pods-GBSwiftLogger-GBSwiftLoggerTests/Pods-GBSwiftLogger-GBSwiftLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7BD0D0E261148E300F4D301 /* GBSwiftLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GBSwiftLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BD0D11261148E300F4D301 /* GBSwiftLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GBSwiftLogger.h; sourceTree = "<group>"; };
 		F7BD0D12261148E300F4D301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A890148A3BBCAEF1E5846C9F /* Pods_GBSwiftLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BD0D18261148E400F4D301 /* GBSwiftLogger.framework in Frameworks */,
+				B09DCD5AD177190E2FC021BB /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +83,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BD0FA52611729200F4D301 /* GBSwiftLogger.framework in Frameworks */,
+				5B231339271E451D5AB056FE /* Pods_LoggerTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		842680BA03C916D4C81FC65C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				01D89909B924405AEF88B819 /* Pods_GBSwiftLogger.framework */,
+				1415A6F73609EE554BDCC5BF /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework */,
+				A37816E4F82ABB378109FAF7 /* Pods_LoggerTestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B65F6B1AAC8687EAAEF16021 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FDE38B21BA8DEA17B7CDCB4 /* Pods-GBSwiftLogger.debug.xcconfig */,
+				BC31288792D39039DDC51FD6 /* Pods-GBSwiftLogger.release.xcconfig */,
+				DC56876D5640F980181BD0FB /* Pods-GBSwiftLogger-GBSwiftLoggerTests.debug.xcconfig */,
+				5049964958D7EC0C44722467 /* Pods-GBSwiftLogger-GBSwiftLoggerTests.release.xcconfig */,
+				1DB7A1C469BDF6835349672B /* Pods-LoggerTestApp.debug.xcconfig */,
+				867D7415C80D134B42D1C317 /* Pods-LoggerTestApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F7BD0D04261148E300F4D301 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +121,8 @@
 				F7BD0D1B261148E400F4D301 /* GBSwiftLoggerTests */,
 				F7BD0E6726115D6500F4D301 /* LoggerTestApp */,
 				F7BD0D0F261148E300F4D301 /* Products */,
+				B65F6B1AAC8687EAAEF16021 /* Pods */,
+				842680BA03C916D4C81FC65C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +187,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7BD0D22261148E400F4D301 /* Build configuration list for PBXNativeTarget "GBSwiftLogger" */;
 			buildPhases = (
+				9465907B07F0BB1FE94F0CE3 /* [CP] Check Pods Manifest.lock */,
 				F7BD0D09261148E300F4D301 /* Headers */,
 				F7BD0D0A261148E300F4D301 /* Sources */,
 				F7BD0D0B261148E300F4D301 /* Frameworks */,
@@ -164,6 +206,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7BD0D25261148E400F4D301 /* Build configuration list for PBXNativeTarget "GBSwiftLoggerTests" */;
 			buildPhases = (
+				0016B78DB7AEC35A22C6221A /* [CP] Check Pods Manifest.lock */,
 				F7BD0D13261148E300F4D301 /* Sources */,
 				F7BD0D14261148E300F4D301 /* Frameworks */,
 				F7BD0D15261148E300F4D301 /* Resources */,
@@ -182,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7BD0E8D26115D6D00F4D301 /* Build configuration list for PBXNativeTarget "LoggerTestApp" */;
 			buildPhases = (
+				9949091C44A3924CA84A80D0 /* [CP] Check Pods Manifest.lock */,
 				F7BD0E6226115D6500F4D301 /* Sources */,
 				F7BD0E6326115D6500F4D301 /* Frameworks */,
 				F7BD0E6426115D6500F4D301 /* Resources */,
+				21D798C07D983690582CB863 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -262,6 +307,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0016B78DB7AEC35A22C6221A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBSwiftLogger-GBSwiftLoggerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		21D798C07D983690582CB863 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoggerTestApp/Pods-LoggerTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LoggerTestApp/Pods-LoggerTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LoggerTestApp/Pods-LoggerTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9465907B07F0BB1FE94F0CE3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GBSwiftLogger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9949091C44A3924CA84A80D0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LoggerTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F7BD0D0A261148E300F4D301 /* Sources */ = {
@@ -444,6 +575,7 @@
 		};
 		F7BD0D23261148E400F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FDE38B21BA8DEA17B7CDCB4 /* Pods-GBSwiftLogger.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -471,6 +603,7 @@
 		};
 		F7BD0D24261148E400F4D301 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC31288792D39039DDC51FD6 /* Pods-GBSwiftLogger.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -497,6 +630,7 @@
 		};
 		F7BD0D26261148E400F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC56876D5640F980181BD0FB /* Pods-GBSwiftLogger-GBSwiftLoggerTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -516,6 +650,7 @@
 		};
 		F7BD0D27261148E400F4D301 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5049964958D7EC0C44722467 /* Pods-GBSwiftLogger-GBSwiftLoggerTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -535,6 +670,7 @@
 		};
 		F7BD0E8E26115D6D00F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DB7A1C469BDF6835349672B /* Pods-LoggerTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -554,6 +690,7 @@
 		};
 		F7BD0E8F26115D6D00F4D301 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 867D7415C80D134B42D1C317 /* Pods-LoggerTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

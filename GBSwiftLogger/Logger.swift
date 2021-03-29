@@ -17,7 +17,7 @@ import Foundation
 -- `info`: Message of level `info`
 -- `all`:  Will print all level of messages
 -*/
-enum LoggerLevels: Int {
+public enum LoggerLevels: Int {
     case none = 0
     case error
     case warning
@@ -27,7 +27,7 @@ enum LoggerLevels: Int {
 }
 
 
-class Logger {
+public class Logger {
 
     public static let log = Logger()
 
