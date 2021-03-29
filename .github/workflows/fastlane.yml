@@ -31,8 +31,8 @@ jobs:
         pod install
 
     - name: Sleep for 20 seconds
-      Run: |
-	sleep 2
+      run: |
+        sleep 2
 
     - name: Run tests 
       run: |
