@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -24,6 +24,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B36FC8B526126BB300A30BC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7BD0D05261148E300F4D301 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7BD0E6526115D6500F4D301;
+			remoteInfo = LoggerTestApp;
+		};
 		F7BD0D19261148E400F4D301 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F7BD0D05261148E300F4D301 /* Project object */;
@@ -110,7 +117,6 @@
 				1DB7A1C469BDF6835349672B /* Pods-LoggerTestApp.debug.xcconfig */,
 				867D7415C80D134B42D1C317 /* Pods-LoggerTestApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -215,6 +221,7 @@
 			);
 			dependencies = (
 				F7BD0D1A261148E400F4D301 /* PBXTargetDependency */,
+				B36FC8B626126BB300A30BC4 /* PBXTargetDependency */,
 			);
 			name = GBSwiftLoggerTests;
 			productName = GBSwiftLoggerTests;
@@ -255,6 +262,7 @@
 					};
 					F7BD0D16261148E300F4D301 = {
 						CreatedOnToolsVersion = 12.4;
+						TestTargetID = F7BD0E6526115D6500F4D301;
 					};
 					F7BD0E6526115D6500F4D301 = {
 						CreatedOnToolsVersion = 12.4;
@@ -424,6 +432,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B36FC8B626126BB300A30BC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7BD0E6526115D6500F4D301 /* LoggerTestApp */;
+			targetProxy = B36FC8B526126BB300A30BC4 /* PBXContainerItemProxy */;
+		};
 		F7BD0D1A261148E400F4D301 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F7BD0D0D261148E300F4D301 /* GBSwiftLogger */;
@@ -645,6 +658,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoggerTestApp.app/LoggerTestApp";
 			};
 			name = Debug;
 		};
@@ -665,6 +679,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LoggerTestApp.app/LoggerTestApp";
 			};
 			name = Release;
 		};
