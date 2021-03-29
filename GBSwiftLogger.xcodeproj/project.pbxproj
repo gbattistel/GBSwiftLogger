@@ -10,6 +10,14 @@
 		F7BD0D18261148E400F4D301 /* GBSwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BD0D0E261148E300F4D301 /* GBSwiftLogger.framework */; };
 		F7BD0D1D261148E400F4D301 /* GBSwiftLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0D1C261148E400F4D301 /* GBSwiftLoggerTests.swift */; };
 		F7BD0D1F261148E400F4D301 /* GBSwiftLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F7BD0D11261148E300F4D301 /* GBSwiftLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7BD0DB12611502800F4D301 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0DB02611502800F4D301 /* Logger.swift */; };
+		F7BD0E6926115D6500F4D301 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0E6826115D6500F4D301 /* AppDelegate.swift */; };
+		F7BD0E6B26115D6500F4D301 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0E6A26115D6500F4D301 /* SceneDelegate.swift */; };
+		F7BD0E6D26115D6500F4D301 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BD0E6C26115D6500F4D301 /* ViewController.swift */; };
+		F7BD0E7026115D6600F4D301 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BD0E6E26115D6500F4D301 /* Main.storyboard */; };
+		F7BD0E7226115D6B00F4D301 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BD0E7126115D6B00F4D301 /* Assets.xcassets */; };
+		F7BD0E7526115D6B00F4D301 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7BD0E7326115D6B00F4D301 /* LaunchScreen.storyboard */; };
+		F7BD0FA52611729200F4D301 /* GBSwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7BD0D0E261148E300F4D301 /* GBSwiftLogger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,15 @@
 		F7BD0D17261148E300F4D301 /* GBSwiftLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GBSwiftLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BD0D1C261148E400F4D301 /* GBSwiftLoggerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GBSwiftLoggerTests.swift; sourceTree = "<group>"; };
 		F7BD0D1E261148E400F4D301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7BD0DB02611502800F4D301 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		F7BD0E6626115D6500F4D301 /* LoggerTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoggerTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BD0E6826115D6500F4D301 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7BD0E6A26115D6500F4D301 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F7BD0E6C26115D6500F4D301 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7BD0E6F26115D6500F4D301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7BD0E7126115D6B00F4D301 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7BD0E7426115D6B00F4D301 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7BD0E7626115D6B00F4D301 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7BD0E6326115D6500F4D301 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BD0FA52611729200F4D301 /* GBSwiftLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -55,6 +80,7 @@
 			children = (
 				F7BD0D10261148E300F4D301 /* GBSwiftLogger */,
 				F7BD0D1B261148E400F4D301 /* GBSwiftLoggerTests */,
+				F7BD0E6726115D6500F4D301 /* LoggerTestApp */,
 				F7BD0D0F261148E300F4D301 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,6 +90,7 @@
 			children = (
 				F7BD0D0E261148E300F4D301 /* GBSwiftLogger.framework */,
 				F7BD0D17261148E300F4D301 /* GBSwiftLoggerTests.xctest */,
+				F7BD0E6626115D6500F4D301 /* LoggerTestApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +100,7 @@
 			children = (
 				F7BD0D11261148E300F4D301 /* GBSwiftLogger.h */,
 				F7BD0D12261148E300F4D301 /* Info.plist */,
+				F7BD0DB02611502800F4D301 /* Logger.swift */,
 			);
 			path = GBSwiftLogger;
 			sourceTree = "<group>";
@@ -84,6 +112,20 @@
 				F7BD0D1E261148E400F4D301 /* Info.plist */,
 			);
 			path = GBSwiftLoggerTests;
+			sourceTree = "<group>";
+		};
+		F7BD0E6726115D6500F4D301 /* LoggerTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				F7BD0E6826115D6500F4D301 /* AppDelegate.swift */,
+				F7BD0E6A26115D6500F4D301 /* SceneDelegate.swift */,
+				F7BD0E6C26115D6500F4D301 /* ViewController.swift */,
+				F7BD0E6E26115D6500F4D301 /* Main.storyboard */,
+				F7BD0E7126115D6B00F4D301 /* Assets.xcassets */,
+				F7BD0E7326115D6B00F4D301 /* LaunchScreen.storyboard */,
+				F7BD0E7626115D6B00F4D301 /* Info.plist */,
+			);
+			path = LoggerTestApp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +178,23 @@
 			productReference = F7BD0D17261148E300F4D301 /* GBSwiftLoggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		F7BD0E6526115D6500F4D301 /* LoggerTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7BD0E8D26115D6D00F4D301 /* Build configuration list for PBXNativeTarget "LoggerTestApp" */;
+			buildPhases = (
+				F7BD0E6226115D6500F4D301 /* Sources */,
+				F7BD0E6326115D6500F4D301 /* Frameworks */,
+				F7BD0E6426115D6500F4D301 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LoggerTestApp;
+			productName = LoggerTestApp;
+			productReference = F7BD0E6626115D6500F4D301 /* LoggerTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -147,8 +206,12 @@
 				TargetAttributes = {
 					F7BD0D0D261148E300F4D301 = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 					F7BD0D16261148E300F4D301 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					F7BD0E6526115D6500F4D301 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
@@ -168,6 +231,7 @@
 			targets = (
 				F7BD0D0D261148E300F4D301 /* GBSwiftLogger */,
 				F7BD0D16261148E300F4D301 /* GBSwiftLoggerTests */,
+				F7BD0E6526115D6500F4D301 /* LoggerTestApp */,
 			);
 		};
 /* End PBXProject section */
@@ -187,6 +251,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F7BD0E6426115D6500F4D301 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BD0E7526115D6B00F4D301 /* LaunchScreen.storyboard in Resources */,
+				F7BD0E7226115D6B00F4D301 /* Assets.xcassets in Resources */,
+				F7BD0E7026115D6600F4D301 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -194,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7BD0DB12611502800F4D301 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +277,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BD0D1D261148E400F4D301 /* GBSwiftLoggerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7BD0E6226115D6500F4D301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BD0E6D26115D6500F4D301 /* ViewController.swift in Sources */,
+				F7BD0E6926115D6500F4D301 /* AppDelegate.swift in Sources */,
+				F7BD0E6B26115D6500F4D301 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +299,25 @@
 			targetProxy = F7BD0D19261148E400F4D301 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7BD0E6E26115D6500F4D301 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7BD0E6F26115D6500F4D301 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7BD0E7326115D6B00F4D301 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7BD0E7426115D6B00F4D301 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F7BD0D20261148E400F4D301 /* Debug */ = {
@@ -341,6 +445,7 @@
 		F7BD0D23261148E400F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K7ALSS964F;
@@ -358,6 +463,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -366,6 +472,7 @@
 		F7BD0D24261148E400F4D301 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = K7ALSS964F;
@@ -391,6 +498,7 @@
 		F7BD0D26261148E400F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7ALSS964F;
 				INFOPLIST_FILE = GBSwiftLoggerTests/Info.plist;
@@ -409,6 +517,7 @@
 		F7BD0D27261148E400F4D301 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K7ALSS964F;
 				INFOPLIST_FILE = GBSwiftLoggerTests/Info.plist;
@@ -418,6 +527,44 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.guillermo.battistel.GBSwiftLoggerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F7BD0E8E26115D6D00F4D301 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7ALSS964F;
+				INFOPLIST_FILE = LoggerTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guillermo.battistel.LoggerTestApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7BD0E8F26115D6D00F4D301 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K7ALSS964F;
+				INFOPLIST_FILE = LoggerTestApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.guillermo.battistel.LoggerTestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -450,6 +597,15 @@
 			buildConfigurations = (
 				F7BD0D26261148E400F4D301 /* Debug */,
 				F7BD0D27261148E400F4D301 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7BD0E8D26115D6D00F4D301 /* Build configuration list for PBXNativeTarget "LoggerTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BD0E8E26115D6D00F4D301 /* Debug */,
+				F7BD0E8F26115D6D00F4D301 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
