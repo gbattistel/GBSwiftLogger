@@ -1,23 +1,30 @@
-# This file contains the fastlane.tools configuration
-# You can find the documentation at https://docs.fastlane.tools
-#
-# For a list of all available actions, check out
-#
-#     https://docs.fastlane.tools/actions
-#
-# For a list of all available plugins, check out
-#
-#     https://docs.fastlane.tools/plugins/available-plugins
-#
-
-# Uncomment the line if you want fastlane to automatically update itself
-# update_fastlane
-
 default_platform(:ios)
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
-  end
+before_all do
+	sh 'mkdir ../reports || true'
+	sh 'mkdir ../dist || true'
+end
+
+desc "Does a static analysis of the project. Configure the options in .swiftlint.yml"
+lane :lint do
+  swiftlint(
+      mode: :lint,
+      output_file: 'reports/swiftlint.txt',
+      config_file: 'fastlane/.swiftlint.yml'
+    )
+end
+  
+  
+desc "Run unit tests."
+lane :tests do
+   run_tests(workspace: "GBSwiftLogger.xcworkspace",
+            devices: ["iPhone 8"],
+            scheme: "GBSwiftLogger")
+end
+
+desc "Build demo app."
+lane :demo_app do
+   run_tests(workspace: "GBSwiftLogger.xcworkspace",
+            devices: ["iPhone 8"],
+            scheme: "LoggerTestApp")
 end
