@@ -11,18 +11,18 @@ import XCTest
 class GBSwiftLoggerTests: XCTestCase {
 
     func testInfoLog() {
-        Logger.shared.i(message: "My info log")
+        Logger.log.i(message: "My info log")
     }
 
     func testLog() {
-        Logger.shared.e(message: "My error log")
+        Logger.log.e(message: "My error log")
     }
     
     func testWarningLog() {
-        Logger.shared.w(message: "My warning log")
+        Logger.log.w(message: "My warning log")
     }
     
     func testSuccessLog() {
-        Logger.shared.w(message: "My success log")
+        Logger.log.s(message: "My success log")
     }
 }

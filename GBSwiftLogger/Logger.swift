@@ -7,72 +7,85 @@
 
 import Foundation
 
-/**
-Available Log level for Logger
-- None:    Print no message
-- Error:   Message of level Error
-- Warning: Message of level Warning
-- Success: Message of level Success
-- Info:    Message of level Info
-- Custom:  Message of level Custom
-*/
-enum LoggerLevels: Int {
 
-   case Error = 0
-   case Warning
-   case Success
-   case Info
+/**
+- Available Log levels for Logger
+-- `none`: Print no message
+-- `error`: Message of level `error`
+-- `warning`: Message of level `warning`
+-- `success`: Message of level `success`
+-- `info`: Message of level `info`
+-- `all`:  Will print all level of messages
+-*/
+enum LoggerLevels: Int {
+    case none = 0
+    case error
+    case warning
+    case success
+    case info
+    case all
 }
 
 
 class Logger {
-    
-    public static let shared = Logger()
-    public var isEnabled: Bool = true
-    
+
+    public static let log = Logger()
+
+    /// represents the current log level: `all` is set as default
+    public var verboseLevel: LoggerLevels = .all
+
     private var errorGlyph: String = "\u{1F6AB}"    // Glyph for messages of level .Error
     private var warningGlyph: String = "\u{1F514}"  // Glyph for messages of level .Warning
     private var successGlyph: String = "\u{2705}"   // Glyph for messages of level .Success
     private var infoGlyph: String = "\u{1F535}"     // Glyph for messages of level .Info
-    
+
     private init() {}
-    
-    
+
+
+    /// Prints information messages if `verboseLevel` is set to `.all` or `.info`
+    /// - Parameter message: message to be printed
     public func i(message: String) {
-        if isEnabled {
-            print(buildMessage(level: .Info, message: message))
+        if verboseLevel == .all || verboseLevel == .info {
+            print(buildMessage(level: .info, message: message))
         }
     }
-    
+
+    /// Prints Error messages if `verboseLevel` is set to `.all` or `.error`
+    /// - Parameter message: message to be printed
     public func e(message: String) {
-        if isEnabled {
-            print(buildMessage(level: .Error, message: message))
+        if verboseLevel == .all || verboseLevel == .error {
+            print(buildMessage(level: .error, message: message))
         }
     }
-    
+
+    /// Prints Warning messages if `verboseLevel` is set to `.all` or `.warning`
+    /// - Parameter message: message to be printed
     public func w(message: String) {
-        if isEnabled {
-            print(buildMessage(level: .Warning, message: message))
+        if verboseLevel == .all || verboseLevel == .warning {
+            print(buildMessage(level: .warning, message: message))
         }
     }
-    
+
+    /// Prints Success messages if `verboseLevel` is set to `.all` or `.success`
+    /// - Parameter message: message to be printed
     public func s(message: String) {
-        if isEnabled {
-            print(buildMessage(level: .Success, message: message))
+        if verboseLevel == .all || verboseLevel == .success {
+            print(buildMessage(level: .success, message: message))
         }
     }
-    
+
     private func getLogGlyph(level: LoggerLevels) -> String {
         switch(level) {
-        case .Error: return errorGlyph
-        case .Info: return infoGlyph
-        case .Success: return successGlyph
-        case .Warning: return warningGlyph
+        case .all: return ""
+        case .none: return ""
+        case .error: return errorGlyph
+        case .info: return infoGlyph
+        case .success: return successGlyph
+        case .warning: return warningGlyph
         }
     }
-    
+
     private func buildMessage(level: LoggerLevels, message: String) -> String {
         return getLogGlyph(level: level) + " " + message + "\r\n"
     }
-    
 }
