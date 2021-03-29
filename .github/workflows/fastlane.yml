@@ -30,10 +30,9 @@ jobs:
       run:  |
         pod install
 
-    - name: Sleep for 30 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '20s'
+    - name: Sleep for 20 seconds
+      Run: |
+	sleep 20
             
     - name: Run tests 
       run: |
