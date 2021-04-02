@@ -19,5 +19,6 @@ desc "Run unit tests."
 lane :tests do
    run_tests(workspace: "GBSwiftLogger.xcworkspace",
             devices: ["iPhone 8"],
-            scheme: "GBSwiftLogger")
+            scheme: "GBSwiftLogger",
+	   clean: true)
 end

@@ -25,11 +25,6 @@ Does a static analysis of the project. Configure the options in .swiftlint.yml
 fastlane tests
 ```
 Run unit tests.
-### demo_app
-```
-fastlane demo_app
-```
-Build demo app.
 
 ----
 
