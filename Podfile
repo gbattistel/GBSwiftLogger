@@ -18,6 +18,5 @@ target 'LoggerTestApp' do
   #use_frameworks!
 
   # Pods for LoggerTestApp
-  pod 'GBSwiftLogger', :path => '.'
-
+  #pod 'GBSwiftLogger', :path => '.'
 end
