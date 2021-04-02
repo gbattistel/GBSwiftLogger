@@ -37,9 +37,6 @@ jobs:
     - name: Run tests 
       run: |
         bundle exec fastlane tests
-    - name: Run App 
-      run: |
-        bundle exec fastlane demo_app
         
     - name: Run Swift lint 
       run: |
