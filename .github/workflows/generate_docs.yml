@@ -23,4 +23,4 @@ jobs:
       uses: steven0351/publish-jazzy-docs@v1
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-        args: "--clean --author Guillermo Battistel --xcodebuild-arguments -workspace,GBSwiftLogger.xcworkspace,-scheme,GBSwiftLogger,-sdk,iphoneos --output docs/swift_output"
+        args: "--clean --author Guillermo Battistel --podspec GBSwiftLogger.podspec"
