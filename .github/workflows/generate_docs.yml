@@ -14,4 +14,4 @@ jobs:
       uses: steven0351/publish-jazzy-docs@v1
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-        args: "--clean --author Guillermo Battistel --podspec GBSwiftLogger.podspec"
+        config: .jazzy.yaml
