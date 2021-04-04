@@ -9,18 +9,9 @@ jobs:
   deploy_docs:
     runs-on: macos-latest
     steps:
-    - name: Checkout
       uses: actions/checkout@v2
-    - name: Select Xcode Version
-      uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: latest-stable
-    - name: Install Pods
-      run:  |
-        pod install
-    - uses: actions/checkout@v1
-    - name: Publish Jazzy Docs
+      name: Publish Jazzy Docs
       uses: steven0351/publish-jazzy-docs@v1
       with:
-        personal_access_token: ${{ secrets.GITHUB_TOKEN }}
+        personal_access_token: ${{ secrets.ACCESS_TOKEN }}
         args: "--clean --author Guillermo Battistel --podspec GBSwiftLogger.podspec"
