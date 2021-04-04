@@ -10,8 +10,8 @@ jobs:
     runs-on: macos-latest
     steps:
       uses: actions/checkout@v2
-      name: Publish Jazzy Docs
-      uses: steven0351/publish-jazzy-docs@v1
-      with:
-        personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-        args: "--clean --author Guillermo Battistel --podspec GBSwiftLogger.podspec"
+        name: Publish Jazzy Docs
+        uses: steven0351/publish-jazzy-docs@v1
+          with:
+          personal_access_token: ${{ secrets.ACCESS_TOKEN }}
+          args: "--clean --author Guillermo Battistel --podspec GBSwiftLogger.podspec"
