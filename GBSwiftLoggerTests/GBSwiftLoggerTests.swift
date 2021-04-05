@@ -10,7 +10,7 @@ import XCTest
 
 class GBSwiftLoggerTests: XCTestCase {
 
-    let environmentUser = "<ENV_USER"
+    let environmentUser = "<ENV_USER>"
     let environmentPassword = "<ENV_PASSWORD>"
     let environmentToken = "<ENV_TOKEN>"
 
