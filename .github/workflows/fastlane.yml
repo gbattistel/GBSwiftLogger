@@ -32,9 +32,11 @@ jobs:
 
     - shell: bash
       env:
-          GB_SWIFT_LOG_ENV_VARIABLE: ${{ secrets.GB_SWIFT_LOG_ENV_VARIABLE }}
+          GB_SWIFT_LOG_ENV_USER: ${{ secrets.GB_SWIFT_LOG_ENV_USER }}
+          GB_SWIFT_LOG_ENV_PASSWORD: ${{ secrets.GB_SWIFT_LOG_ENV_PASSWORD }}
+          GB_SWIFT_LOG_ENV_TOKEN: ${{ secrets.GB_SWIFT_LOG_ENV_TOKEN }}
       run:  |
-          sed -i '' 's/<ENV_VARIABLE>/'"$GB_SWIFT_LOG_ENV_VARIABLE"'/g' GBSwiftLoggerTests/GBSwiftLoggerTests.swift
+          sh setup_env.sh -u "$GB_SWIFT_LOG_ENV_USER" -p "$GB_SWIFT_LOG_ENV_PASSWORD" -t "$GB_SWIFT_LOG_ENV_TOKEN"
 
     - name: Sleep for 10 seconds
       run: |
