@@ -34,7 +34,7 @@ jobs:
       env:
           GB_SWIFT_LOG_ENV_VARIABLE: ${{ secrets.GB_SWIFT_LOG_ENV_VARIABLE }}
       run:  |
-          export GB_SWIFT_LOG_ENV_VARIABLE="$SUPER_SECRET"
+          export GB_SWIFT_LOG_ENV_VARIABLE="$GB_SWIFT_LOG_ENV_VARIABLE"
           printenv
 
     - name: Sleep for 10 seconds
