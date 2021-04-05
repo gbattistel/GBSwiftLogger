@@ -34,8 +34,7 @@ jobs:
       env:
           GB_SWIFT_LOG_ENV_VARIABLE: ${{ secrets.GB_SWIFT_LOG_ENV_VARIABLE }}
       run:  |
-          export GB_SWIFT_LOG_ENV_VARIABLE="$GB_SWIFT_LOG_ENV_VARIABLE"
-          printenv
+          sed -i '' 's/<ENV_VARIABLE>/"$GB_SWIFT_LOG_ENV_VARIABLE"/g' GBSwiftLoggerTests/GBSwiftLoggerTests.swift
 
     - name: Sleep for 10 seconds
       run: |
