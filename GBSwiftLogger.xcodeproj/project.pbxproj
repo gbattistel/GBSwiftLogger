@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -198,6 +198,7 @@
 				F7BD0D0A261148E300F4D301 /* Sources */,
 				F7BD0D0B261148E300F4D301 /* Frameworks */,
 				F7BD0D0C261148E300F4D301 /* Resources */,
+				B3E171D0261BC3EE00B83038 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,6 +382,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		B3E171D0261BC3EE00B83038 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# SEARCH AND REPLACE VARIABLE IN FILE\n# THIS IS JUST TO TEST A BUILD SCRIPT\nsed -i '' 's/<ENV_VARIABLE>/'${GB_SWIFT_LOG_ENV_VARIABLE}'/g' GBSwiftLoggerTests/GBSwiftLoggerTests.swift\necho \"Environment variable: ${GB_SWIFT_LOGGER_ENV_VARIABLE}\"\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
