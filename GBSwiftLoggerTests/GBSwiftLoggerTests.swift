@@ -10,28 +10,28 @@ import XCTest
 
 class GBSwiftLoggerTests: XCTestCase {
 
-    let environment_variable = "<ENV_VARIABLE>"
+    let environmentVariable = "<ENV_VARIABLE>"
     func testInfoLog() {
         Logger.log.i(message: "My info log")
-        Logger.log.i(message: "My environment variable: \(environment_variable)")
-        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
+        Logger.log.i(message: "My environment variable: \(environmentVariable)")
+        XCTAssertEqual(environmentVariable, "MY_SECRET_ENV_VARIABLE")
     }
 
     func testLog() {
         Logger.log.e(message: "My error log")
-        Logger.log.e(message: "My environment variable: \(environment_variable)")
-        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
+        Logger.log.e(message: "My environment variable: \(environmentVariable)")
+        XCTAssertEqual(environmentVariable, "MY_SECRET_ENV_VARIABLE")
     }
 
     func testWarningLog() {
         Logger.log.w(message: "My warning log")
-        Logger.log.w(message: "My environment variable: \(environment_variable)")
-        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
+        Logger.log.w(message: "My environment variable: \(environmentVariable)")
+        XCTAssertEqual(environmentVariable, "MY_SECRET_ENV_VARIABLE")
     }
 
     func testSuccessLog() {
         Logger.log.s(message: "My success log")
-        Logger.log.s(message: "My environment variable: \(environment_variable)")
-        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
+        Logger.log.s(message: "My environment variable: \(environmentVariable)")
+        XCTAssertEqual(environmentVariable, "MY_SECRET_ENV_VARIABLE")
     }
 }
