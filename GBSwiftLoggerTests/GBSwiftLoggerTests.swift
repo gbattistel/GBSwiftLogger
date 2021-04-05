@@ -14,20 +14,24 @@ class GBSwiftLoggerTests: XCTestCase {
     func testInfoLog() {
         Logger.log.i(message: "My info log")
         Logger.log.i(message: "My environment variable: \(environment_variable)")
+        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
     }
 
     func testLog() {
         Logger.log.e(message: "My error log")
         Logger.log.e(message: "My environment variable: \(environment_variable)")
+        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
     }
     
     func testWarningLog() {
         Logger.log.w(message: "My warning log")
         Logger.log.w(message: "My environment variable: \(environment_variable)")
+        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
     }
     
     func testSuccessLog() {
         Logger.log.s(message: "My success log")
         Logger.log.s(message: "My environment variable: \(environment_variable)")
+        XCTAssertEqual(environment_variable, "MY_SECRET_ENV_VARIABLE")
     }
 }
