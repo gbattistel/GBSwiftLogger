@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 /**
 - Available Log levels for Logger
 -- `none`: Print no message
@@ -32,7 +31,6 @@ public enum LoggerLevels: Int {
     case all
 }
 
-
 public class Logger {
 
     public static let log = Logger()
@@ -48,7 +46,6 @@ public class Logger {
     private var infoGlyph: String = "\u{1F535}"     // Glyph for messages of level .Info
 
     private init() {}
-
 
     /// Prints information messages if `verboseLevel` is set to `.all` or `.info`
     /// Example of usage: `Logger.log.i(message: "My info log")`
@@ -87,7 +84,7 @@ public class Logger {
     }
 
     private func getLogGlyph(level: LoggerLevels) -> String {
-        switch(level) {
+        switch level {
         case .all: return ""
         case .none: return ""
         case .error: return errorGlyph

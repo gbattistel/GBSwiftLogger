@@ -10,11 +10,10 @@ import GBSwiftLogger
 
 class ViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+
         Logger.log.verboseLevel = .all // Enable all verbosity levels
         Logger.log.e(message: "My Error message")
         Logger.log.s(message: "My Success message")
@@ -23,6 +22,4 @@ class ViewController: UIViewController {
 
     }
 
-
 }
-
