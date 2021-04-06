@@ -25,18 +25,27 @@ jobs:
     - name: Setup Fastlane
       run:  |
           bundle install
+
     - name: Install Pods
       run:  |
-        pod install
+          pod install
+
+    - shell: bash
+      env:
+          GB_SWIFT_LOG_ENV_USER: ${{ secrets.GB_SWIFT_LOG_ENV_USER }}
+          GB_SWIFT_LOG_ENV_PASSWORD: ${{ secrets.GB_SWIFT_LOG_ENV_PASSWORD }}
+          GB_SWIFT_LOG_ENV_TOKEN: ${{ secrets.GB_SWIFT_LOG_ENV_TOKEN }}
+      run:  |
+          sh setup_env.sh -u "$GB_SWIFT_LOG_ENV_USER" -p "$GB_SWIFT_LOG_ENV_PASSWORD" -t "$GB_SWIFT_LOG_ENV_TOKEN"
 
     - name: Sleep for 10 seconds
       run: |
-        sleep 10
+          sleep 10
 
     - name: Run tests 
       run: |
-        bundle exec fastlane tests
+          bundle exec fastlane tests
         
     - name: Run Swift lint 
       run: |
-        bundle exec fastlane lint
+          bundle exec fastlane lint
