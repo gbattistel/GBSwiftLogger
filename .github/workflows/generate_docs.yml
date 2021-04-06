@@ -1,4 +1,4 @@
-name: PublishDocumentation
+name: generate_jazzy_docs
 
 on:
   release:
@@ -14,5 +14,5 @@ jobs:
       uses: steven0351/publish-jazzy-docs@v1
       with:
         personal_access_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: ${GITHUB_REF##*/}
+        branch: jazzy_docs_flow
         config: .jazzy.yaml
