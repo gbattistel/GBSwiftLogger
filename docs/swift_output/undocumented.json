@@ -1,0 +1,19 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/runner/work/GBSwiftLogger/GBSwiftLogger/GBSwiftLogger/Logger.swift",
+      "line": 34,
+      "symbol": "Logger",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/runner/work/GBSwiftLogger/GBSwiftLogger/GBSwiftLogger/Logger.swift",
+      "line": 36,
+      "symbol": "Logger.log",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/runner/work/GBSwiftLogger/GBSwiftLogger"
+}
