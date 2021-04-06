@@ -3,9 +3,10 @@ on:
     
 jobs:
   build:
-  runs-on: macOS-latest
- 
-    steps:
+    name: deploy_cocoapods
+    runs-on: macos-latest
+
+    steps:      
     - uses: actions/checkout@v2
     - name: Podspec lint
       run: |
