@@ -38,11 +38,14 @@ jobs:
             --author_url https://github.com/gbattistel \
             --xcodebuild-arguments -workspace,GBSwiftLogger.xcworkspace,-scheme,GBSwiftLogger,-sdk,iphoneos \
             --output docs/swift_output
-            
-    - name: Commit changes
+
+    - name: Setup Git user
       run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          git add .
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+
+    - name: Git commit and push
+      run: |
+          git add docs/
           git commit -m "Jazzy docs updated"
           git push
