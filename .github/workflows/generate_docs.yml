@@ -1,6 +1,7 @@
 name: generate_jazzy_docs
 
 on:
+  push:
   release:
     types: [published]
   # Allows you to run this workflow manually from the Actions tab
