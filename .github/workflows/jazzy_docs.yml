@@ -25,6 +25,11 @@ jobs:
     - name: Install Pods
       run:  |
           pod install
+
+    - name: Install jazzy
+      run:  |
+          gem install jazzy
+
     - name: Run jazzy
       run:  |
           jazzy \
