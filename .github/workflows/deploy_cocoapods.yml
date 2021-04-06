@@ -1,0 +1,17 @@
+on:
+   workflow_dispatch:
+    
+jobs:
+  build:
+  runs-on: macOS-latest
+ 
+    steps:
+    - uses: actions/checkout@v2
+    - name: Podspec lint
+      run: |
+        pod lib lint
+    - name: Publish to CocoaPod register
+      env:
+        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+      run: |
+        pod trunk push GBSwiftLogger.podspec
