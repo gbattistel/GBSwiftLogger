@@ -1,5 +1,0 @@
-author: Guillermo Battistel
-github_url: https://github.com/gbattistel/GBSwiftLogger
-output: Docs
-swift_build_tool: xcodebuild
-podspec: GBSwiftLogger.podspec
