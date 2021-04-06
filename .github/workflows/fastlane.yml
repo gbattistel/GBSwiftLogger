@@ -37,7 +37,7 @@ jobs:
           GB_SWIFT_LOG_ENV_PASSWORD: ${{ secrets.GB_SWIFT_LOG_ENV_PASSWORD }}
           GB_SWIFT_LOG_ENV_TOKEN: ${{ secrets.GB_SWIFT_LOG_ENV_TOKEN }}
       run:  |
-          sh setup_env.sh -u "$GB_SWIFT_LOG_ENV_USER" -p "$GB_SWIFT_LOG_ENV_PASSWORD" -t "$GB_SWIFT_LOG_ENV_TOKEN"
+          sh scripts/setup_env.sh -u "$GB_SWIFT_LOG_ENV_USER" -p "$GB_SWIFT_LOG_ENV_PASSWORD" -t "$GB_SWIFT_LOG_ENV_TOKEN"
 
     - name: Sleep for 10 seconds
       run: |

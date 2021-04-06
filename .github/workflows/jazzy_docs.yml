@@ -38,7 +38,7 @@ jobs:
             --author Guillermo Battistel \
             --author_url https://github.com/gbattistel \
             --xcodebuild-arguments -workspace,GBSwiftLogger.xcworkspace,-scheme,GBSwiftLogger,-sdk,iphoneos \
-            --output docs/swift_output
+            --output docs
 
     - name: Setup Git user
       run: |
