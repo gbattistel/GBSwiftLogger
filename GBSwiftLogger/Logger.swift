@@ -35,6 +35,14 @@ public class Logger {
 
     public static let log = Logger()
 
+    /// Returns the version of the SDK
+    public static var version: String {
+        get {
+            let version = Bundle(for: Logger.self).infoDictionary?["CFBundleShortVersionString"] as? String ?? "Unknown"
+            return version
+        }
+    }
+
     /// Represents the current log level: `all` is set as default
     /// You can disable all logs by doing: `verboseLevel = .none`
     /// For more information check `LoggerLevels` enum
