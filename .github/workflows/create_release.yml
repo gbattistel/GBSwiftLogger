@@ -9,7 +9,7 @@ on:
         default: '1.0.0'
 jobs:
   tests:
-    name: jazzy_docs
+    name: create_release
     runs-on: macos-latest
 
     steps:
@@ -45,6 +45,8 @@ jobs:
       run: |
           git branch RELEASE-"$GB_SDK_VERSION"
           git checkout RELEASE-"$GB_SDK_VERSION"
-          git add .
+          git add GBSwiftLogger.podspec
+          git add GBSwiftLogger.xcodeproj/project.pbxproj
+          git add docs/
           git commit -m "Release v$GB_SDK_VERSION"
-          git push
+          git push --set-upstream origin RELEASE-"$GB_SDK_VERSION"
