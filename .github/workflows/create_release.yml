@@ -45,6 +45,6 @@ jobs:
       run: |
           git branch RELEASE-"$GB_SDK_VERSION"
           git checkout RELEASE-"$GB_SDK_VERSION"
-          git add docs/
+          git add .
           git commit -m "Release v$GB_SDK_VERSION"
           git push
