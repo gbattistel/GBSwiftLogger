@@ -37,11 +37,30 @@ jobs:
       env:
           GB_SDK_VERSION: ${{ github.event.inputs.version }}
       run: |
-          git branch RELEASE-"$GB_SDK_VERSION"
-          git checkout RELEASE-"$GB_SDK_VERSION"
+          git branch releases/RELEASE-"$GB_SDK_VERSION"
+          git checkout releases/RELEASE-"$GB_SDK_VERSION"
           git status
           git add GBSwiftLogger.podspec
           git add GBSwiftLogger.xcodeproj/project.pbxproj
           git add docs/
           git commit -m "Release v$GB_SDK_VERSION"
-          git push --set-upstream origin RELEASE-"$GB_SDK_VERSION"
+          git push --set-upstream origin releases/RELEASE-"$GB_SDK_VERSION"
+          git checkout main
+          git fetch
+          git pull
+          git merge releases/RELEASE-"$GB_SDK_VERSION"
+          git push
+
+    - name: Create GH Release
+        id: create_release
+        uses: zendesk/action-create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+          GB_SDK_VERSION: ${{ github.event.inputs.version }}
+        with:
+          tag_name: ${{ GB_SDK_VERSION }}
+          release_name: Release ${{ GB_SDK_VERSION }}
+          body: |
+            Complete your changes here.
+          draft: false
+          prerelease: false
