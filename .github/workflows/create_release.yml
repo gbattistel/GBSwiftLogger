@@ -49,8 +49,6 @@ jobs:
           git fetch
           git pull
           git merge releases/RELEASE-"$GB_SDK_VERSION"
-          git add .
-          git commit -m "Release v$GB_SDK_VERSION"
           git push
 
     - name: Create GH Release
