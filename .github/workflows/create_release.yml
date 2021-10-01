@@ -22,12 +22,6 @@ jobs:
       with:
         xcode-version: latest-stable
 
-    - name: Setup ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: 2.7.0
-        bundler-cache: true
-
     - name: Install Pods
       run:  |
           pod install
@@ -45,6 +39,7 @@ jobs:
       run: |
           git branch RELEASE-"$GB_SDK_VERSION"
           git checkout RELEASE-"$GB_SDK_VERSION"
+          git status
           git add GBSwiftLogger.podspec
           git add GBSwiftLogger.xcodeproj/project.pbxproj
           git add docs/
