@@ -1,0 +1,60 @@
+name: create_release
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'SDK Version'     
+        required: true
+        default: '0.0.0'
+jobs:
+  tests:
+    name: create_release
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+    - name: Select Xcode Version
+      uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: latest-stable
+
+    - name: Install Pods
+      run:  |
+          pod install
+
+    # Update new version
+    - shell: bash
+      env:
+          GB_SDK_VERSION: ${{ github.event.inputs.version }}
+      run:  |
+          sh scripts/setup_version.sh -v "$GB_SDK_VERSION"
+
+    - name: Git commit and push
+      env:
+          GB_SDK_VERSION: ${{ github.event.inputs.version }}
+      run: |
+          git branch releases/RELEASE-"$GB_SDK_VERSION"
+          git checkout releases/RELEASE-"$GB_SDK_VERSION"
+          git status
+          git add GBSwiftLogger.podspec
+          git add GBSwiftLogger.xcodeproj/project.pbxproj
+          git add docs/
+          git commit -m "Release v$GB_SDK_VERSION"
+          git push --set-upstream origin releases/RELEASE-"$GB_SDK_VERSION"
+
+    - uses: gha-utilities/init-pull-request@v0.3.2
+      env:
+        GB_SDK_VERSION: ${{ github.event.inputs.version }}
+      with:
+        verbose: true
+        pull_request_token: ${{ secrets.GITHUB_TOKEN }}
+        head: releases/RELEASE-"$GB_SDK_VERSION"
+        base: main
+        title: Release ${{ github.event.inputs.version }}
+        body: >
+            - Release version updated.
+
