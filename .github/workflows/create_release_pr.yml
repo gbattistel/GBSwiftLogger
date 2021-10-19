@@ -55,7 +55,7 @@ jobs:
       env:
         GB_SDK_VERSION: ${{ github.event.inputs.version }}
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.ACCESS_TOKEN }}
         commit-message: Auto Pull Request
         title: "Release v$GB_SDK_VERSION"  
         body: Auto-created Pull Request
