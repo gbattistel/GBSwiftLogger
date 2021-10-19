@@ -36,7 +36,7 @@ jobs:
       with:
         token: ${{ secrets.ACCESS_TOKEN }}
         commit-message: Auto Pull Request
-        title: "Release v$GB_SDK_VERSION"  
+        title: Release v${{ github.event.inputs.version }}  
         body: Auto-created Pull Request
         branch: releases/RELEASE-${{ github.event.inputs.version }} # The branch where you commit
         base: main # Don't forget to specify the right base branch here
