@@ -9,7 +9,7 @@ on:
         default: '0.0.0'
 jobs:
   tests:
-    name: create_release
+    name: create_release_pull_request
     runs-on: macos-latest
 
     steps:
@@ -46,15 +46,15 @@ jobs:
           git commit -m "Release v$GB_SDK_VERSION"
           git push --set-upstream origin releases/RELEASE-"$GB_SDK_VERSION"
 
-    - uses: gha-utilities/init-pull-request@v0.3.2
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3.10.1
       env:
         GB_SDK_VERSION: ${{ github.event.inputs.version }}
       with:
-        verbose: true
-        pull_request_token: ${{ secrets.GITHUB_TOKEN }}
-        head: releases/RELEASE-"$GB_SDK_VERSION"
-        base: main
-        title: Release ${{ github.event.inputs.version }}
-        body: >
-            - Release version updated.
+        token: ${{ secrets.GH_TOKEN }}
+        commit-message: Auto Pull Request
+        title: "Release v$GB_SDK_VERSION"  
+        body: Auto-created Pull Request
+        branch: releases/RELEASE-"$GB_SDK_VERSION" # The branch where you commit
+        base: main # Don't forget to specify the right base branch here
 
