@@ -1,4 +1,4 @@
-on:
+on: release_deploy_cocoapods
    workflow_dispatch:
     
 jobs:
