@@ -1,10 +1,10 @@
-name: release_create_github_release
+name: release_deploy_cocoapods
 on: 
    workflow_dispatch:
     
 jobs:
   build:
-    name: deploy_cocoapods
+    name: release_deploy_cocoapods
     runs-on: macos-latest
 
     steps:      
