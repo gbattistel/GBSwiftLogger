@@ -59,7 +59,7 @@ jobs:
         commit-message: Auto Pull Request
         title: "Release v$GB_SDK_VERSION"  
         body: Auto-created Pull Request
-        branch: releases/RELEASE-$GB_SDK_VERSION # The branch where you commit
+        branch: "releases/RELEASE-$GB_SDK_VERSION" # The branch where you commit
         base: main # Don't forget to specify the right base branch here
         delete-branch: true
 
