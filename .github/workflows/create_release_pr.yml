@@ -32,7 +32,11 @@ jobs:
           GB_SDK_VERSION: ${{ github.event.inputs.version }}
       run:  |
           sh scripts/setup_version.sh -v "$GB_SDK_VERSION"
-
+    - name: Setup Git user
+      # https://github.com/actions/checkout/issues/13
+      run: |
+        git config user.name github-actions[bot]
+        git config user.email 41898282+github-actions[bot]@users.noreply.github.com
     - name: Git commit and push
       env:
           GB_SDK_VERSION: ${{ github.event.inputs.version }}
