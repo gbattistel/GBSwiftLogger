@@ -28,19 +28,6 @@ jobs:
           GB_SDK_VERSION: ${{ github.event.inputs.version }}
       run:  |
           sh scripts/setup_version.sh -v "$GB_SDK_VERSION"
-    
-    - name: Git commit and push
-      env:
-          GB_SDK_VERSION: ${{ github.event.inputs.version }}
-      run: |
-          git branch releases/RELEASE-"$GB_SDK_VERSION"
-          git checkout releases/RELEASE-"$GB_SDK_VERSION"
-          git status
-          git add GBSwiftLogger.podspec
-          git add GBSwiftLogger.xcodeproj/project.pbxproj
-          git add docs/
-          git commit -m "Release v$GB_SDK_VERSION"
-          git push --set-upstream origin releases/RELEASE-"$GB_SDK_VERSION"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v3.10.1
