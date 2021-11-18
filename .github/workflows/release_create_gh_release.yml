@@ -22,7 +22,16 @@ jobs:
       with:
         xcode-version: latest-stable
 
-    - name: Create GH Release
+    - name: "✏️ Generate release changelog"
+      id: generate-release-changelog
+      uses: heinrichreimer/github-changelog-generator-action@v2.1.1
+      with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          onlyLastTag: "false"
+          stripHeaders: "false"
+          stripGeneratorNotice: "true"
+
+    - name: "🚀 Create GH Release"
       id: release
       uses: zendesk/action-create-release@v1
       env:
@@ -30,8 +39,6 @@ jobs:
       with:
         tag_name: ${{ github.event.inputs.version }}
         release_name: Release ${{ github.event.inputs.version }}
-        body: |
-          Auto generated release. 
-          Update code changes here.
+        body: ${{ steps.generate-release-changelog.outputs.changelog }}
         draft: false
         prerelease: false
