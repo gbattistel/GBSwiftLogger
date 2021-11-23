@@ -30,12 +30,12 @@ jobs:
 
     - name: bash
       run:  |
-          "LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_ENV
+          echo "LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_ENV
 
 
     - name: Run tests 
       run: |
-          "CHANGELOG=$(bundle exec fastlane changelog ${{ env.LAST_TAG }})" >> $GITHUB_ENV
+          echo "CHANGELOG=$(bundle exec fastlane changelog ${{ env.LAST_TAG }})" >> $GITHUB_ENV
 
     - name: Print Changelog
       run: |
