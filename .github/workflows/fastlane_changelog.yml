@@ -36,8 +36,8 @@ jobs:
     - name: Get changelog from last TAG 
       id: get-changelog
       run: |
-          echo "::set-output name=CHANGELOG::$(bundle exec fastlane changelog tag:${{ steps.get-last-tag.outputs.LAST_TAG }})"
+          bundle exec fastlane changelog tag:${{ steps.get-last-tag.outputs.LAST_TAG }}
 
     - name: Print Changelog
       run: |
-          echo "${{ steps.get-changelog.outputs.CHANGELOG }}"
+          echo "${{ env.CHANGELOG }}"
