@@ -28,15 +28,16 @@ jobs:
       run:  |
           bundle install
 
-    - name: bash
-      run:  |
-          echo "LAST_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))" >> $GITHUB_ENV
+    - name: Get last created TAG
+      id: get-last-tag
+      run:  echo "::set-output name=LAST_TAG::$(git describe --tags $(git rev-list --tags --max-count=1))"
 
 
-    - name: Run tests 
+    - name: Get changelog from last TAG 
+      id: get-changelog
       run: |
-          echo "CHANGELOG=$(bundle exec fastlane changelog tag:${{ env.LAST_TAG }})" >> $GITHUB_ENV
+          echo "::set-output name=CHANGELOG::$(bundle exec fastlane changelog tag:${{ steps.get-last-tag.outputs.LAST_TAG }})"
 
     - name: Print Changelog
       run: |
-          echo "${{ env.CHANGELOG }}"
+          echo "${{ steps.get-changelog.outputs.LAST_TAG }}"
