@@ -1,10 +1,10 @@
-name: fastlane_changelog
+name: test_action
 on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   tests:
-    name: fastlane_changelog
+    name: test_action
     runs-on: macos-latest
 
     steps:      
