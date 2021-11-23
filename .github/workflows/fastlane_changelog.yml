@@ -35,7 +35,7 @@ jobs:
 
     - name: Run tests 
       run: |
-          echo "CHANGELOG=$(bundle exec fastlane changelog ${{ env.LAST_TAG }})" >> $GITHUB_ENV
+          echo "CHANGELOG=$(bundle exec fastlane changelog tag:${{ env.LAST_TAG }})" >> $GITHUB_ENV
 
     - name: Print Changelog
       run: |
