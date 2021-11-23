@@ -1,0 +1,22 @@
+name: fastlane_changelog
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+jobs:
+  tests:
+    name: fastlane_changelog
+    runs-on: macos-latest
+
+    steps:      
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Get last created TAG
+      id: get-last-tag
+      run:  echo "::set-output name=LAST_TAG::(git describe --tags $(git rev-list --tags --max-count=1))"
+      
+    - name: Print TAG
+      run: echo "The selected color is ${{ steps.get-last-tag.outputs.LAST_TAG }}"
+      
