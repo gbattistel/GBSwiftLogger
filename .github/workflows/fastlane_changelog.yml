@@ -40,4 +40,4 @@ jobs:
 
     - name: Print Changelog
       run: |
-          echo "${{ steps.get-changelog.outputs.LAST_TAG }}"
+          echo "${{ steps.get-changelog.outputs.CHANGELOG }}"
