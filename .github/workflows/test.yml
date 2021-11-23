@@ -15,7 +15,7 @@ jobs:
 
     - name: Get last created TAG
       id: get-last-tag
-      run:  echo "::set-output name=LAST_TAG::(git describe --tags $(git rev-list --tags --max-count=1))"
+      run:  echo "::set-output name=LAST_TAG::$(git describe --tags $(git rev-list --tags --max-count=1))"
       
     - name: Print TAG
       run: echo "The selected color is ${{ steps.get-last-tag.outputs.LAST_TAG }}"
