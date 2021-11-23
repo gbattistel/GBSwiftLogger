@@ -1,0 +1,17 @@
+name: trigger_slack
+on: 
+   workflow_dispatch:
+    
+jobs:
+  build:
+    name: trigger_slack
+    runs-on: macos-latest
+
+    steps:      
+    - name: Post to Slack
+      uses: homeday-de/slack-release-bot-action@main
+      with:
+        webhook_url: ${{ secrets.SLACK_RELEASE_BOT_WEBHOOK_URL }}
+        title: "New iOS release"
+        body: "Test"
+        context: iOS WebRTC SDK
