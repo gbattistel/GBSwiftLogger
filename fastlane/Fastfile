@@ -33,6 +33,6 @@ changelog_from_git_commits(
 )
 changelog = lane_context[SharedValues::FL_CHANGELOG]
 
-sh("echo CHANGELOG=${changelog} >> $GITHUB_ENV")
+sh("echo CHANGELOG="#{changelog}" >> $GITHUB_ENV")
 
 end
