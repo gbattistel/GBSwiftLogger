@@ -23,8 +23,9 @@ lane :tests do
 	   clean: true)
 end
 
-lane :changelog do
+lane :changelog do |options|
 changelog_from_git_commits(
+	between: [options[:tag],"HEAD"],
   	pretty: "* %b [%aN]",# Optional, lets you provide a custom format to apply to each commit when generating the changelog text
   	date_format: "short",# Optional, lets you provide an additional date format to dates within the pretty-formatted string
   	match_lightweight_tag: false,  # Optional, lets you ignore lightweight (non-annotated) tags when searching for the last tag
