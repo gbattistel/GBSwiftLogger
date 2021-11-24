@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = 'GBSwiftLogger'
-  spec.version = '1.0.4'
+  spec.version = '1.0.5'
   spec.summary = 'An awesome Swift logger with verbosity selection'
  
   spec.description = <<-DESC
