@@ -61,6 +61,6 @@ jobs:
       uses: homeday-de/slack-release-bot-action@main
       with:
         webhook_url: ${{ secrets.SLACK_RELEASE_BOT_WEBHOOK_URL }}
-        title: "New iOS release v${{ steps.get-current-tag.outputs.CURRENT_TAG }}"
+        title: "GBSwiftLogger iOS SDK release v${{ steps.get-current-tag.outputs.CURRENT_TAG }}"
         body: "${{ steps.changelog-file.outputs.content }}"
-        context: iOS WebRTC SDK
+        context: iOS GBSwiftLogger SDK
