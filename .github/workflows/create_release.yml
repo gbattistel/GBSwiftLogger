@@ -22,7 +22,7 @@ jobs:
       with:
         xcode-version: latest-stable
 
-    - name: Install Pods
+    - name: "🤖 Install Pods"
       run:  |
           pod install
 
@@ -33,7 +33,7 @@ jobs:
       run:  |
           sh scripts/setup_version.sh -v "$GB_SDK_VERSION"
 
-    - name: Git commit and push
+    - name: "🤖 Generate Pull Request and merge"
       env:
           GB_SDK_VERSION: ${{ github.event.inputs.version }}
       run: |
@@ -51,7 +51,37 @@ jobs:
           git merge releases/RELEASE-"$GB_SDK_VERSION"
           git push
 
-    - name: Create GH Release
+    - name: "🤖 Setup ruby"
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7.0
+        bundler-cache: true
+
+    - name: "🤖 Setup Fastlane"
+      run:  |
+          bundle install
+
+    - name: "✏️ Get last created TAG"
+      id: get-last-tag
+      run:  echo "::set-output name=LAST_TAG::$(git describe --tags $(git rev-list --tags --max-count=1))"
+
+
+    - name: "✏️  Generate changelog from last TAG"
+      id: get-changelog
+      run: |
+          bundle exec fastlane changelog tag:${{ steps.get-last-tag.outputs.LAST_TAG }}
+
+    - name: "✏️ Read changelog.txt"
+      id: changelog-file
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./fastlane/changelog.txt
+
+    - name: "✏️ Print Changelog"
+      run: |
+          echo "${{ steps.changelog-file.outputs.content }}"
+
+    - name: "🚀 Create GH Release"
       id: release
       uses: zendesk/action-create-release@v1
       env:
@@ -60,6 +90,6 @@ jobs:
         tag_name: ${{ github.event.inputs.version }}
         release_name: Release ${{ github.event.inputs.version }}
         body: |
-          Complete your changes here.
+          ${{ steps.changelog-file.outputs.content }}
         draft: false
         prerelease: false
