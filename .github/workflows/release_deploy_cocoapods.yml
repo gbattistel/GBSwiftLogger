@@ -9,7 +9,9 @@ jobs:
 
     steps:      
     - uses: actions/checkout@v2
-
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+ 
     - name: "🤖 Setup ruby"
       uses: ruby/setup-ruby@v1
       with:
@@ -40,15 +42,15 @@ jobs:
       run: |
           echo "${{ steps.changelog-file.outputs.content }}"
 
-    - name: "🤖 Podspec lint"
-      run: |
-        pod lib lint
+#     - name: "🤖 Podspec lint"
+#       run: |
+#         pod lib lint
 
-    - name: "🚀  Publish to CocoaPods register"
-      env:
-        COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
-      run: |
-        pod trunk push GBSwiftLogger.podspec
+#     - name: "🚀  Publish to CocoaPods register"
+#       env:
+#         COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+#       run: |
+#         pod trunk push GBSwiftLogger.podspec
     
     - name: "✏️ Get Current TAG"
       id: get-current-tag
