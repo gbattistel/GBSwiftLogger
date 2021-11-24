@@ -38,6 +38,12 @@ jobs:
       run: |
           bundle exec fastlane changelog tag:${{ steps.get-last-tag.outputs.LAST_TAG }}
 
+    - name: Read changelog.txt
+      id: changelog-file
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./fastlane/changelog.txt
+
     - name: Print Changelog
       run: |
-          echo "${{ env.CHANGELOG }}"
+          echo "${{ steps.changelog-file.outputs.content }}"
