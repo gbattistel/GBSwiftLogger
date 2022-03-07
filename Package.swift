@@ -11,8 +11,8 @@ let package = Package(
         targets: [
             .binaryTarget(
                      name: "GBSwiftLogger",
-                     url: "https://github.com/gbattistel/GBSwiftLogger/releases/download/1.0.6/GBSwiftLogger.xcframework.zip",
-                     checksum: "98fddcf173410bf5f641016a608a717580246e423147f22e0fa51da35871c54b"
+                     url: "https://github.com/gbattistel/GBSwiftLogger/releases/download/1.0.7/GBSwiftLogger.xcframework.zip",
+                     checksum: "ebecd039e0743f3a26fa9d8049f6f09599c4247e6eee2f06d78cd84694687b01"
              )
         ]
 )
