@@ -6,6 +6,20 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		B3D164A227D688AC0038430A /* Build xcframework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = B3D164A527D688AC0038430A /* Build configuration list for PBXAggregateTarget "Build xcframework" */;
+			buildPhases = (
+				B3D164A627D688B80038430A /* Build xcframework */,
+			);
+			dependencies = (
+			);
+			name = "Build xcframework";
+			productName = "Build xcframework";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		A890148A3BBCAEF1E5846C9F /* Pods_GBSwiftLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01D89909B924405AEF88B819 /* Pods_GBSwiftLogger.framework */; };
 		B09DCD5AD177190E2FC021BB /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1415A6F73609EE554BDCC5BF /* Pods_GBSwiftLogger_GBSwiftLoggerTests.framework */; };
@@ -255,6 +269,9 @@
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					B3D164A227D688AC0038430A = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					F7BD0D0D261148E300F4D301 = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -284,6 +301,7 @@
 				F7BD0D0D261148E300F4D301 /* GBSwiftLogger */,
 				F7BD0D16261148E300F4D301 /* GBSwiftLoggerTests */,
 				F7BD0E6526115D6500F4D301 /* LoggerTestApp */,
+				B3D164A227D688AC0038430A /* Build xcframework */,
 			);
 		};
 /* End PBXProject section */
@@ -382,6 +400,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		B3D164A627D688B80038430A /* Build xcframework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Build xcframework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Type a script or drag a script file from your workspace to insert its path.\nSCHEME_NAME=\"GBSwiftLogger\"\nFRAMEWORK_NAME=\"GBSwiftLogger\"\nWORKSPACE_NAME=\"GBSwiftLogger.xcworkspace\"\n\nSIMULATOR_ARCHIVE_PATH=\"${BUILD_DIR}/${CONFIGURATION}/${FRAMEWORK_NAME}-iphonesimulator.xcarchive\"\nDEVICE_ARCHIVE_PATH=\"${BUILD_DIR}/${CONFIGURATION}/${FRAMEWORK_NAME}-iphoneos.xcarchive\"\nOUTPUT_DIR=\"./Output/\"\n\n# Simulator xcarchive\nxcodebuild archive \\\n  -workspace ${WORKSPACE_NAME} \\\n  -scheme ${SCHEME_NAME} \\\n  -sdk iphonesimulator \\\n  -archivePath ${SIMULATOR_ARCHIVE_PATH} \\\n  SKIP_INSTALL=NO \\\n  BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n  \n# Device xcarchive\nxcodebuild archive \\\n  -workspace ${WORKSPACE_NAME} \\\n  -scheme ${SCHEME_NAME} \\\n  -sdk iphoneos \\\n  -archivePath ${DEVICE_ARCHIVE_PATH} \\\n  SKIP_INSTALL=NO \\\n  BUILD_LIBRARY_FOR_DISTRIBUTION=YES\n  \n# Clean up old output directory\nrm -rf \"${OUTPUT_DIR}\"\n\n# Create xcframework combine of all frameworks\nxcodebuild -create-xcframework \\\n  -framework ${SIMULATOR_ARCHIVE_PATH}/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework \\\n  -framework ${DEVICE_ARCHIVE_PATH}/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework \\\n  -output ${OUTPUT_DIR}/${FRAMEWORK_NAME}.xcframework\n\n# xcodebuild -create-xcframework \\\n  -framework ${SIMULATOR_ARCHIVE_PATH}/Products/Library/Frameworks/${FRAMEWORK_NAME}.framework \\\n  -output ${OUTPUT_DIR}/${FRAMEWORK_NAME}.xcframework\n# Open the project folder when the xcframework is ready\nopen .\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -446,6 +482,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B3D164A327D688AC0038430A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B3D164A427D688AC0038430A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		F7BD0D20261148E400F4D301 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -710,6 +762,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B3D164A527D688AC0038430A /* Build configuration list for PBXAggregateTarget "Build xcframework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D164A327D688AC0038430A /* Debug */,
+				B3D164A427D688AC0038430A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F7BD0D08261148E300F4D301 /* Build configuration list for PBXProject "GBSwiftLogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
