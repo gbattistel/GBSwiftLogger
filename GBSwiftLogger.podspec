@@ -10,14 +10,17 @@ This Logger with help you to debug your Swift app / framework easier. You can se
   spec.homepage = 'https://github.com/gbattistel/GBSwiftLogger'
   spec.license = { :type => 'MIT', :file => 'LICENSE' }
   spec.author = { 'Guillermo Battistel' => 'guillermo.battistel@gmail.com' }
-  spec.source = { :git => 'https://github.com/gbattistel/GBSwiftLogger.git', :tag => spec.version.to_s }
- 
-
   spec.source = { :http => "https://github.com/gbattistel/GBSwiftLogger/releases/download/1.0.9/GBSwiftLogger.xcframework.zip" }
 
   spec.swift_version = "5.0"
   spec.ios.deployment_target = '10.0'
  
-  vendored_frameworks = 'GBSwiftLogger.xcframework'
+  spec.preserve_paths = 'GBSwiftLogger.xcframework'
+  spec.vendored_frameworks = 'GBSwiftLogger.xcframework'
+  spec.requires_arc = true
 
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
 end

@@ -1,0 +1,11 @@
+framework module GBSwiftLogger {
+  umbrella header "GBSwiftLogger.h"
+
+  export *
+  module * { export * }
+}
+
+module GBSwiftLogger.Swift {
+    header "GBSwiftLogger-Swift.h"
+    requires objc
+}

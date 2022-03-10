@@ -1,0 +1,35 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios14.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name GBSwiftLogger
+import Foundation
+@_exported import GBSwiftLogger
+import Swift
+import _Concurrency
+public enum LoggerLevels : Swift.Int {
+  case none
+  case error
+  case warning
+  case success
+  case info
+  case all
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Logger {
+  public static let log: GBSwiftLogger.Logger
+  public static var version: Swift.String {
+    get
+  }
+  public var verboseLevel: GBSwiftLogger.LoggerLevels
+  public func i(message: Swift.String)
+  public func e(message: Swift.String)
+  public func w(message: Swift.String)
+  public func s(message: Swift.String)
+  @objc deinit
+}
+extension GBSwiftLogger.LoggerLevels : Swift.Equatable {}
+extension GBSwiftLogger.LoggerLevels : Swift.Hashable {}
+extension GBSwiftLogger.LoggerLevels : Swift.RawRepresentable {}
